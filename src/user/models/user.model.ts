@@ -17,3 +17,18 @@ export class User {
   @Field({ nullable: true })
   phone?: string;
 }
+
+@ObjectType()
+export class UserPaginationResponse {
+  @Field(() => [User])
+  data: User[];
+
+  @Field(() => Int)
+  total: number;
+
+  @Field(() => Int)
+  currentPage: number;
+
+  @Field(() => Int)
+  itemsPerPage: number;
+}
