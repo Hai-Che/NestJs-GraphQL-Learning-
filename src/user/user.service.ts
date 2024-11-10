@@ -81,8 +81,9 @@ export class UserService {
       await this.prisma.user.delete({ where: { id } });
       return true;
     } catch (error) {
-      throw new Error('Failed to delete user');
-      //   return false;
+      //   throw new Error('Failed to delete user');
+      console.log(error);
+      return false;
     }
   }
 }
